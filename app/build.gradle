@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace = 'com.comiclite.basic'
+    compileSdk = 37
+
+    defaultConfig {
+        applicationId = 'com.comiclite.basic'
+        minSdk = 17     // Android 4.2
+        targetSdk = 24  // the lowest that current Android versions still install
+        versionCode = 1
+        versionName = '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Sign with your own key for distribution; debug signing is only for local testing.
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    lint {
+        disable 'ExpiredTargetSdkVersion'
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // junrar 6.x: newer versions use java.nio.file / java.time, missing on Android 4.2.
+    implementation 'com.github.junrar:junrar:6.0.1'
+}

@@ -1,0 +1,8 @@
+ComicLite Basic is released under the MIT License (see LICENSE).
+
+It uses this third-party library, bundled into the app:
+
+junrar 6.0.1 — https://github.com/junrar/junrar
+  Reading RAR (.cbr) archives. Distributed under the UnRAR license:
+  the code may be used freely, but must not be used to re-create the RAR
+  compression algorithm. See https://github.com/junrar/junrar/blob/master/LICENSE
